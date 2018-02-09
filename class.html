@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+        // Always use Capitals letters to start class name
+        class Mammal{
+            constructor(name){
+                this._name = name;
+            }
+
+            // Setup Getters and Setters
+            get name(){
+                return this._name;
+            }
+            set name(name){
+                this._name = name;
+            }
+
+            static makeMammal(name){
+                return new Mammal(name);
+            }
+
+            getInfo(){
+                return `${this._name} is a Mammal <br/>`;
+            }
+
+        }
+
+        let dog = new Mammal('Lucy');
+        // to change the name in your constructor  = dog.name = 'Ginger';        
+        document.writeln(`${dog.getInfo()}`);
+
+        let chipmunk = Mammal.makeMammal('Alvin');
+        document.write(`${chipmunk.name} <br/>`);
+
+        class Marsupial extends Mammal{
+            constructor(name, hasPouch){
+                super(name);
+                this._hasPouch = hasPouch;
+            }
+
+            get hasPouch(){
+                return this._hasPouch;
+            }
+
+            set hasPouch(hasPouch){
+                this._hasPouch = hasPouch;
+            }
+
+            // Override method here
+            getInfo(){
+                return `${this._name} is a marsupial`;
+            }
+        }
+
+        let kangaroo = new Marsupial('Paul', true);
+        document.write(`It is ${kangaroo.hasPouch} that ${kangaroo._name} has a pouch  <br/>`);
+
+        function getClass(classType){
+            if(classType == 1)return Mammal;
+            else return Marsupial;
+        }
+
+        class Koala extends getClass(1){
+            constructor(name){
+                super(name);
+            }
+        }
+
+        let carl = new Koala('Carl');
+        document.write(`${carl.getInfo()}<br/>`);
+    </script>
+</body>
+</html>
