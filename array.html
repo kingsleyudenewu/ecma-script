@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let array1 = Array.of(1,2,3,4,5);
+        // Change a string into an array
+        let array2 = Array.from('words');
+        // Manipulating an array vvalue
+        let array3 = Array.from(array1, (value) => value * 2);
+
+        for(val of array3)document.write(`Array value: ${val}<br/>`);
+
+        // More about Set()
+        var randSet = new Set();
+        randSet.add(10);
+        randSet.add('word');       
+
+        document.write(`Has 10: ${randSet.has(10)}<br/>`);
+        document.write(`Set Size: ${randSet.size}<br/>`);
+
+        for(let v of randSet)document.write(`Set Val: ${v}<br/>`);
+
+        // More about Map
+        var randMap = new Map();
+        randMap.set('key1', 'Random String');
+        randMap.set('key2', 100);
+
+        document.write(`Key 1: ${randMap.get('key1')}<br/>`);
+
+        
+
+    </script>
+</body>
+</html>
