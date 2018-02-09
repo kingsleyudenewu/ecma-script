@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let diff = (num1, num2) => num1 - num2;
+        document.writeln(`The difference is ${diff(5, 2)}<br/>`);
+
+        let mult = (num1, num2) => {
+            let prod = num1 * num2;
+            return prod;
+        }
+        document.writeln(`The multiplication of 2 * 3 is: ${mult(2,3)}<br/>`);
+
+        let valArray = [1,2,3,4,5];
+        let sumValues = valArray.reduce((a,b) => a+b);
+        document.writeln(`Sum value is ${sumValues}<br/>`);
+
+        let evens = valArray.filter(v => { 
+            return v%2 == 0
+        });
+        document.writeln(`Even numbers only are: ${evens}<br/>`);
+    </script>
+</body>
+</html>
