@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Promises defines codes that will be executed later
+        // They can ither succeed or fail
+        var p1 = Promise.resolve('Resolve Me');
+        p1.then((res)=>document.writeln(`${res}<br/>`));
+
+        // Create a promise that will execute after 2 sec
+        var p2 = new Promise(function(resolve, reject){
+            setTimeout(()=>resolve('Resolve new promise'), 2000);
+        });
+        p2.then((res1)=>document.writeln(`${res1}<br/>`));
+
+        let randVal = 18;
+        var p3 = new Promise(function(resolve, reject){
+            if(randVal == 4)resolve('Good one');
+            else reject('Bad value');
+        });
+        p3.then((val) => document.writeln(`${val}<br/>`), (err) => document.writeln(`${err}<br/>`));
+
+        // Advanced promise with catch()
+        var p4 = new Promise((resolve, reject)=>{
+            if(randVal <= 17)throw new Error("Can't vote");
+            else resolve('Can vote now');
+        });
+
+        p4.then((val) => document.writeln(`${val}`)).catch((err) => document.writeln(`${err.message}<br/>`));
+    </script>
+</body>
+</html>

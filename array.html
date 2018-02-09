@@ -32,6 +32,9 @@
         randMap.set('key2', 100);
 
         document.write(`Key 1: ${randMap.get('key1')}<br/>`);
+        randMap.forEach(function(val, key){
+            document.write(`${key}: ${val}<br/>`);
+        });
 
         
 
